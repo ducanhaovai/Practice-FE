@@ -20,7 +20,11 @@ function App() {
       <main>
         <section id="core-concepts">
           <h2>Core Concepts</h2>
+          
           <ul>
+          {CORE_CONCEPTS.map((conceptItem)=>
+           (<CoreConcept key={conceptItem.title} {...conceptItem}/>) )}
+            {/*
             <CoreConcept {...CORE_CONCEPTS[0]}
 
             />
@@ -33,7 +37,7 @@ function App() {
             <CoreConcept {...CORE_CONCEPTS[3]}
 
             />
-            {/*<CoreConcept
+            <CoreConcept
          title="Compoments"
          description="The core UI building block."
          image = {}
@@ -43,10 +47,10 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton onClick={() =>handleClick("components")}>Components</TabButton>
-            <TabButton onClick={() =>handleClick("jsx")}>Jsx</TabButton>
-            <TabButton onClick={() =>handleClick("props")}>Props</TabButton>
-            <TabButton onClick={() =>handleClick("state")}>State</TabButton>
+            <TabButton isSelected={selectedTopic === 'components'} onClick={() =>handleClick("components")}>Components</TabButton>
+            <TabButton isSelected={selectedTopic === 'jsx'} onClick={() =>handleClick("jsx")}>Jsx</TabButton>
+            <TabButton isSelected={selectedTopic === 'props'} onClick={() =>handleClick("props")}>Props</TabButton>
+            <TabButton isSelected={selectedTopic === 'state'}onClick={() =>handleClick("state")}>State</TabButton>
           </menu>
           
             {!selectedTopic && <p>Please select a topic</p> }
