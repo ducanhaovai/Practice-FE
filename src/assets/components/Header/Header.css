@@ -1,28 +1,59 @@
-
 header {
-    text-align: center;
-    margin: 3rem 0;
-  }
+  text-align: center;
+  padding: 8px 8px 8px 44px;
+  gap: 10px;
+
+
+}
+
+header img {
+  height: 5rem;
+  width: 10rem;
+  object-fit: cover;
+}
+
+header h1 {
+  margin: 0;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 5rem;
+  background: linear-gradient(40deg, #ea00ff, #ea00ff, #03d5ff, #03d5ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+}
+
+header p {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #8964b0;
+  font-family: "Roboto Condensed", sans-serif;
+}
+.container{
   
-  header img {
-    height: 5rem;
-    width: 10rem;
-    object-fit: cover;
-  }
+ gap: 15px;
   
-  header h1 {
-    margin: 0;
-    font-family: "Roboto Condensed", sans-serif;
-    font-size: 5rem;
-    background: linear-gradient(40deg, #ea00ff, #ea00ff, #03d5ff, #03d5ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
-  }
+}
+header button{
   
-  header p {
-    margin: 0;
-    font-size: 1.25rem;
-    color: #8964b0;
-    font-family: "Roboto Condensed", sans-serif;
-  }
+width: 60px;
+height: 40px;
+
+justify-content: center;
+align-items: center;
+gap: 10px;
+border-radius: 10px;
+background: var(--primary-primary, #b106ea);
+}
+header input{
+  border-radius: 4px;
+  border-style: solid;
+  border-color: var(--gray-4, #b1b5c3);
+  border-width: 1px;
+  padding: 12px 10px 12px 10px;
+  gap: 10px;
+  flex-shrink: 0;
+  width: 248px;
+  height: 30px;
+  
+}
+

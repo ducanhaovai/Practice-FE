@@ -1,21 +1,55 @@
+
 import imgReacte from "../../img/react-core-concepts.png";
+import React, { useState, useEffect } from 'react';
+
 
 import './Header.css'
 
-const reactDes=["Fundamental", "Crucial", "Core"];
-function genRamdon(max){
-    return Math.floor(Math.random() * (max +1));
+export default function Header({ onSave, editedIndex, namesList }){
+  const [name, setName] = useState('');
+  
+  
+  const handleSave = () => {
+    onSave(name);
+    setName(''); // Clear the input after saving
+  };
+  useEffect(() => {
+    // If there's an edited index, populate the input with the corresponding name
+    if (editedIndex !== null) {
+      setName(namesList[editedIndex]);
+    }
+  }, [editedIndex, namesList]);
+  
 
-}
+  
+  function handleInputChange  (event)  {
+    setName(event.target.value);
 
-export default function Header(){
+  }
+
+
+  
+
     return (<header>
            <img src={imgReacte} alt="Stylized atom" />
-           <h1>React Essentials</h1>
+           <h1>{name}</h1>
            <p>
-             {reactDes[genRamdon(2)]} React concepts you will need for almost any app you are
+              React concepts you will need for almost any app you are
              going to build!
            </p>
+           <div className="container">
+           <input type="text" required value={name} onChange={handleInputChange} />
+           <button id="updateButton" onClick={handleSave}>{editedIndex !== null ? 'Update' : 'Save'}</button>
+
+           </div>
+           
+            
+           
+           
+           
+
+           
+
          </header>
     );
-};
+}
